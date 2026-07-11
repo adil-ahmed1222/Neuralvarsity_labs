@@ -1,6 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
+
+const DEFAULT_LOGO = "/logos/default.svg";
 
 interface ToolLogoProps {
   name: string;
@@ -9,20 +12,22 @@ interface ToolLogoProps {
 }
 
 export function ToolLogo({ name, logo, size = "md" }: ToolLogoProps) {
+  const [src, setSrc] = useState(logo);
   const dim = size === "sm" ? "h-10 w-10" : "h-12 w-12";
-  const img = size === "sm" ? 28 : 32;
+  const px = size === "sm" ? 40 : 48;
 
   return (
-    <div
-      className={`${dim} flex shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[rgba(255,184,0,0.12)] bg-[#0F172A]/90 p-1.5 shadow-inner`}
-    >
-      <Image
-        src={logo}
-        alt={`${name} logo`}
-        width={img}
-        height={img}
-        className="h-full w-full object-contain"
-      />
-    </div>
+    <Image
+      src={src}
+      alt={`${name} Logo`}
+      width={px}
+      height={px}
+      loading="lazy"
+      unoptimized={src.endsWith(".svg")}
+      className={`${dim} shrink-0 rounded-xl bg-transparent object-contain`}
+      onError={() => {
+        if (src !== DEFAULT_LOGO) setSrc(DEFAULT_LOGO);
+      }}
+    />
   );
 }

@@ -48,7 +48,7 @@ export const tools: Tool[] = [
     description:
       "Microsoft's AI companion integrated across Windows, Edge, Office, and the web for everyday productivity.",
     category: "Foundation Models",
-    logo: "/logos/microsoft-copilot.svg",
+    logo: "/logos/copilot.svg",
     website: "https://copilot.microsoft.com",
     tags: ["Microsoft", "Productivity", "Chat"],
     featured: true,
@@ -137,7 +137,7 @@ export const tools: Tool[] = [
     description:
       "GitHub Copilot inside Visual Studio Code for inline suggestions, chat, and multi-file edits.",
     category: "Coding Assistants",
-    logo: "/logos/vs-code-copilot.svg",
+    logo: "/logos/vscode-copilot.svg",
     website: "https://code.visualstudio.com/docs/copilot/overview",
     tags: ["VS Code", "GitHub", "Autocomplete"],
     featured: true,
@@ -174,7 +174,7 @@ export const tools: Tool[] = [
     description:
       "Collaborative cloud IDE with AI agent for building, iterating, and deploying full-stack apps.",
     category: "Coding Assistants",
-    logo: "/logos/replit-ai.svg",
+    logo: "/logos/replit.svg",
     website: "https://replit.com/ai",
     tags: ["Cloud IDE", "Deploy", "Agents"],
     popular: true,
@@ -186,7 +186,7 @@ export const tools: Tool[] = [
     description:
       "Prompt-to-app builder that generates and deploys full-stack projects instantly in the browser.",
     category: "Coding Assistants",
-    logo: "/logos/bolt-new.svg",
+    logo: "/logos/bolt.svg",
     website: "https://bolt.new",
     tags: ["Full-Stack", "Prompt", "Deploy"],
     featured: true,
@@ -198,7 +198,7 @@ export const tools: Tool[] = [
     description:
       "AI app builder that turns natural language into production-ready full-stack applications.",
     category: "Coding Assistants",
-    logo: "/logos/emergent.svg",
+    logo: "/logos/emergent.png",
     website: "https://emergent.sh",
     tags: ["No-Code", "Full-Stack", "Apps"],
   },
@@ -221,7 +221,7 @@ export const tools: Tool[] = [
     description:
       "ByteDance's AI-native IDE with intelligent coding assistance and project-aware workflows.",
     category: "Coding Assistants",
-    logo: "/logos/trae.svg",
+    logo: "/logos/trae.png",
     website: "https://trae.ai",
     tags: ["IDE", "ByteDance", "Coding"],
   },
@@ -284,7 +284,7 @@ export const tools: Tool[] = [
     description:
       "No-code platform for creating, deploying, and monetizing custom AI agents for any use case.",
     category: "Workflow Automation & AI Agent Frameworks",
-    logo: "/logos/buildmyagent.svg",
+    logo: "/logos/buildmyagent.png",
     website: "https://buildmyagent.io",
     tags: ["Agents", "No-Code", "Deploy"],
   },
@@ -295,7 +295,7 @@ export const tools: Tool[] = [
     description:
       "Visual studio for orchestrating multi-agent crews with role-based collaboration and task delegation.",
     category: "Workflow Automation & AI Agent Frameworks",
-    logo: "/logos/crewai-studio.svg",
+    logo: "/logos/crewai.svg",
     website: "https://crewai.com",
     tags: ["Multi-Agent", "Orchestration", "Crews"],
     popular: true,
@@ -330,7 +330,7 @@ export const tools: Tool[] = [
     description:
       "All-in-one desktop and Docker app for chatting with documents, building agents, and running local LLMs.",
     category: "Workflow Automation & AI Agent Frameworks",
-    logo: "/logos/anythingllm.svg",
+    logo: "/logos/anythingllm.png",
     website: "https://anythingllm.com",
     tags: ["RAG", "Local LLM", "Documents"],
     popular: true,
@@ -355,7 +355,7 @@ export const tools: Tool[] = [
     description:
       "AI-powered UGC ad creation platform for generating high-converting video ads at scale.",
     category: "UGC (AI Video Generation)",
-    logo: "/logos/arcads.svg",
+    logo: "/logos/arcads.png",
     website: "https://arcads.ai",
     tags: ["UGC", "Ads", "Marketing"],
     featured: true,
@@ -367,7 +367,7 @@ export const tools: Tool[] = [
     description:
       "AI avatar video platform for marketing, training, and personalized content at scale.",
     category: "UGC (AI Video Generation)",
-    logo: "/logos/heygen.svg",
+    logo: "/logos/heygen.png",
     website: "https://heygen.com",
     tags: ["Avatars", "Video", "Marketing"],
     featured: true,
@@ -380,7 +380,7 @@ export const tools: Tool[] = [
     description:
       "Enterprise AI video platform with avatars for training, communications, and localization.",
     category: "UGC (AI Video Generation)",
-    logo: "/logos/synthesia.svg",
+    logo: "/logos/synthesia.png",
     website: "https://synthesia.io",
     tags: ["Avatars", "Enterprise", "Training"],
     popular: true,
@@ -392,7 +392,7 @@ export const tools: Tool[] = [
     description:
       "AI video editing app for creating polished social content with auto-captions and effects.",
     category: "UGC (AI Video Generation)",
-    logo: "/logos/captions.svg",
+    logo: "/logos/captions.png",
     website: "https://captions.ai",
     tags: ["Social", "Editing", "Captions"],
     popular: true,
@@ -415,7 +415,7 @@ export const tools: Tool[] = [
     description:
       "Generative AI platform for face swap, avatar videos, and realistic video content creation.",
     category: "UGC (AI Video Generation)",
-    logo: "/logos/akool.svg",
+    logo: "/logos/akool.png",
     website: "https://akool.com",
     tags: ["Face Swap", "Avatars", "Video"],
   },
@@ -426,7 +426,7 @@ export const tools: Tool[] = [
     description:
       "AI ad video generator that turns product URLs into scroll-stopping UGC-style video ads.",
     category: "UGC (AI Video Generation)",
-    logo: "/logos/creatify.svg",
+    logo: "/logos/creatify.png",
     website: "https://creatify.ai",
     tags: ["Ads", "UGC", "E-commerce"],
   },
@@ -462,7 +462,7 @@ export const tools: Tool[] = [
     description:
       "Google Labs filmmaking tool powered by Veo for creating AI-generated cinematic video scenes.",
     category: "UGC (AI Video Generation)",
-    logo: "/logos/flow.svg",
+    logo: "/logos/flow.png",
     website: "https://labs.google/fx/tools/flow",
     tags: ["Google Labs", "Filmmaking", "Veo"],
   },
@@ -473,7 +473,7 @@ export const tools: Tool[] = [
     description:
       "Creative AI video platform for generating stylized motion content and social media visuals.",
     category: "UGC (AI Video Generation)",
-    logo: "/logos/higgsfield-ai.svg",
+    logo: "/logos/higgsfield-ai.png",
     website: "https://higgsfield.ai",
     tags: ["Creative", "Motion", "Social"],
   },

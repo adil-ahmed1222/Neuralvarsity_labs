@@ -8,7 +8,7 @@
     "start": "next start -p 3002",
     "lint": "next lint",
     "clean": "node -e \"const fs=require('fs');['.next','node_modules/.cache'].forEach(p=>{try{fs.rmSync(p,{recursive:true,force:true})}catch(e){}})\"",
-    "logos": "node scripts/generate-logos.mjs",
+    "logos": "node scripts/download-official-logos.mjs",
     "postinstall": "prisma generate"
   },
   "dependencies": {
