@@ -1,0 +1,114 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id              String   @id @default(cuid())
+  githubId        Int      @unique
+  name            String
+  slug            String   @unique
+  fullName        String
+  description     String?
+  owner           String
+  htmlUrl         String
+  cloneUrl        String
+  homepage        String?
+  language        String?
+  framework       String?
+  license         String?
+  visibility      String   @default("public")
+  stars           Int      @default(0)
+  forks           Int      @default(0)
+  openIssues      Int      @default(0)
+  size            Int      @default(0)
+  status          String   @default("active")
+  deploymentStatus String  @default("unknown")
+  imageUrl        String?
+  defaultBranch   String   @default("main")
+  lastCommitSha   String?
+  lastCommitMsg   String?
+  lastCommitDate  DateTime?
+  createdAt       DateTime
+  updatedAt       DateTime
+  syncedAt        DateTime @default(now())
+  deployments     Deployment[]
+  tags            ProjectTag[]
+  technologies    ProjectTechnology[]
+  analytics       Analytics[]
+}
+
+model Deployment {
+  id           String   @id @default(cuid())
+  projectId    String
+  project      Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  environment  String
+  url          String?
+  provider     String   @default("vercel")
+  status       String   @default("pending")
+  commitHash   String?
+  version      String?
+  buildTime    Int?
+  deployedAt   DateTime @default(now())
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  slug        String   @unique
+  description String?
+  color       String?
+  createdAt   DateTime @default(now())
+}
+
+model Technology {
+  id        String              @id @default(cuid())
+  name      String              @unique
+  slug      String              @unique
+  category  String?
+  icon      String?
+  color     String?
+  projects  ProjectTechnology[]
+  createdAt DateTime            @default(now())
+}
+
+model ProjectTechnology {
+  projectId    String
+  technologyId String
+  project      Project    @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  technology   Technology @relation(fields: [technologyId], references: [id], onDelete: Cascade)
+  @@id([projectId, technologyId])
+}
+
+model ProjectTag {
+  id        String  @id @default(cuid())
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  tag       String
+  @@unique([projectId, tag])
+}
+
+model Resource {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  description String?
+  type        String
+  url         String
+  createdAt   DateTime @default(now())
+}
+
+model Analytics {
+  id        String   @id @default(cuid())
+  projectId String?
+  project   Project? @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  metric    String
+  value     Float
+  date      DateTime @default(now())
+}

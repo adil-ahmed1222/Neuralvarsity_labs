@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-deep: #030712;
+    --bg-mid: #07111f;
+    --bg-surface: #0f172a;
+    --primary: #f59e0b;
+    --primary-bright: #ffb800;
+    --secondary: #1e293b;
+    --secondary-light: #334155;
+    --card-border: rgba(255, 184, 0, 0.15);
+    --glow: rgba(255, 184, 0, 0.12);
+    --nav-brand: #ffb400;
+  }
+
+  * {
+    @apply border-[rgba(255,184,0,0.08)];
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#030712] text-slate-100 antialiased;
+    background: linear-gradient(180deg, #030712 0%, #07111f 40%, #030712 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--card-border);
+  }
+
+  .glass-nav {
+    background: rgba(3, 7, 18, 0.75);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 184, 0, 0.1);
+  }
+
+  .glass-card {
+    background: linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.8) 0%,
+      rgba(30, 41, 59, 0.4) 100%
+    );
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    box-shadow:
+      0 4px 24px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-[#FFB800] via-[#F59E0B] to-[#FFB800] bg-clip-text text-transparent;
+  }
+
+  .glow-amber {
+    box-shadow:
+      0 0 40px var(--glow),
+      0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255, 184, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 184, 0, 0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out both;
+  }
+
+  .nav-gradient-bg {
+    background: linear-gradient(
+      120deg,
+      rgba(255, 180, 0, 0.06) 0%,
+      rgba(245, 158, 11, 0.02) 25%,
+      rgba(99, 102, 241, 0.04) 50%,
+      rgba(255, 180, 0, 0.05) 75%,
+      rgba(245, 158, 11, 0.03) 100%
+    );
+    background-size: 300% 300%;
+    animation: nav-gradient-shift 12s ease infinite;
+  }
+
+  .nav-grid-pattern {
+    background-image:
+      linear-gradient(rgba(255, 180, 0, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 180, 0, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    animation: nav-grid-drift 20s linear infinite;
+  }
+
+  .nav-cta-shine {
+    background: linear-gradient(
+      105deg,
+      transparent 35%,
+      rgba(255, 255, 255, 0.45) 50%,
+      transparent 65%
+    );
+    background-size: 200% 100%;
+  }
+
+  .nav-cta-gradient {
+    background: linear-gradient(
+      135deg,
+      #f59e0b 0%,
+      #ffb400 40%,
+      #ffc933 60%,
+      #f59e0b 100%
+    );
+    background-size: 200% 200%;
+    animation: nav-cta-gradient 6s ease infinite;
+  }
+
+  .nav-cta-pulse {
+    animation: nav-cta-pulse 5s ease-in-out infinite;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0.6;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nav-gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes nav-grid-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(32px, 32px, 0);
+  }
+}
+
+@keyframes nav-cta-gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes nav-logo-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 4px rgba(255, 180, 0, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(255, 180, 0, 0.45));
+  }
+}
+
+@keyframes nav-cta-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 20px rgba(255, 180, 0, 0.25),
+      0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 32px rgba(255, 180, 0, 0.45),
+      0 6px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-gradient-bg,
+  .nav-grid-pattern,
+  .nav-cta-gradient,
+  .nav-cta-pulse {
+    animation: none !important;
+  }
+
+  .animate-fade-up {
+    animation: none;
+  }
+}
