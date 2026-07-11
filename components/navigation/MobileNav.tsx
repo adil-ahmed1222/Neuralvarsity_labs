@@ -111,7 +111,7 @@ export function MobileNav({
                 delay={0.1}
                 activeLayoutId="nav-active-underline-mobile"
               />
-              <SuggestToolButton className="w-full justify-center" delay={0.15} />
+              <SuggestToolButton className="w-full justify-center" delay={0.15} onClick={onClose} />
             </nav>
           </motion.aside>
         </>

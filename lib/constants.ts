@@ -1,4 +1,6 @@
 export const APP_NAME = "NeuralVarsity CMS";
+export const SUGGEST_TOOL_PATH = "/labs/suggest";
+export const SUGGEST_TOOL_EMAIL = "labs@neuralvarsity.ai";
 export const GITHUB_USERNAME = process.env.GITHUB_USERNAME ?? "adil-ahmed1222";
 export const GITHUB_API = "https://api.github.com";
 
