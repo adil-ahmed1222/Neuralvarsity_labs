@@ -10,17 +10,14 @@ import { SuggestToolButton } from "./SuggestToolButton";
 interface MobileNavProps {
   isOpen: boolean;
   onClose: () => void;
-  isLabs: boolean;
-  isProjects: boolean;
-  onToolsClick: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+  isLabsHome: boolean;
+  onGoToSection: (hash: "tools" | "newest") => void;
 }
 
 export function MobileNav({
   isOpen,
   onClose,
-  isLabs,
-  isProjects,
-  onToolsClick,
+  onGoToSection,
 }: MobileNavProps) {
   const prefersReducedMotion = useReducedMotion();
 
@@ -51,7 +48,7 @@ export function MobileNav({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: prefersReducedMotion ? 0 : 0.25 }}
+            transition={{ duration: prefersReducedMotion ? 0 : 0.2 }}
             onClick={onClose}
           />
 
@@ -71,11 +68,10 @@ export function MobileNav({
             transition={
               prefersReducedMotion
                 ? { duration: 0 }
-                : { type: "spring", stiffness: 320, damping: 32 }
+                : { type: "tween", duration: 0.25 }
             }
           >
             <div className="nav-gradient-bg pointer-events-none absolute inset-0 opacity-60" />
-            <div className="nav-grid-pattern pointer-events-none absolute inset-0 opacity-20" />
 
             <div className="relative flex items-center justify-between border-b border-[rgba(255,180,0,0.1)] px-5 py-4">
               <p className="text-sm font-semibold text-white">Menu</p>
@@ -91,27 +87,35 @@ export function MobileNav({
 
             <nav className="relative flex flex-1 flex-col gap-3 px-5 py-6">
               <NavLinkButton
-                href="/labs"
-                label="Explore Tools"
-                isActive={isLabs}
-                onClick={(event) => {
-                  onToolsClick(event);
-                  onClose();
-                }}
-                className="w-full justify-center"
-                delay={0.05}
-                activeLayoutId="nav-active-underline-mobile"
-              />
-              <NavLinkButton
-                href="/projects"
-                label="Projects"
-                isActive={isProjects}
+                href="/labs/categories/foundation-models"
+                label="Categories"
+                isActive={false}
                 onClick={onClose}
                 className="w-full justify-center"
-                delay={0.1}
-                activeLayoutId="nav-active-underline-mobile"
               />
-              <SuggestToolButton className="w-full justify-center" delay={0.15} onClick={onClose} />
+              <NavLinkButton
+                href="/labs#tools"
+                label="Popular"
+                isActive={false}
+                onClick={(event) => {
+                  event.preventDefault();
+                  onClose();
+                  onGoToSection("tools");
+                }}
+                className="w-full justify-center"
+              />
+              <NavLinkButton
+                href="/labs#newest"
+                label="New"
+                isActive={false}
+                onClick={(event) => {
+                  event.preventDefault();
+                  onClose();
+                  onGoToSection("newest");
+                }}
+                className="w-full justify-center"
+              />
+              <SuggestToolButton className="w-full justify-center" onClick={onClose} />
             </nav>
           </motion.aside>
         </>
@@ -140,17 +144,17 @@ export function HamburgerButton({ isOpen, onClick }: HamburgerButtonProps) {
         <motion.span
           className="block h-0.5 w-5 rounded-full bg-[#FFB400]"
           animate={isOpen ? { rotate: 45, y: 4 } : { rotate: 0, y: 0 }}
-          transition={{ duration: 0.25 }}
-        />
-        <motion.span
-          className="block h-0.5 w-5 rounded-full bg-[#FFB400]"
-          animate={isOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
           transition={{ duration: 0.2 }}
         />
         <motion.span
           className="block h-0.5 w-5 rounded-full bg-[#FFB400]"
+          animate={isOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+          transition={{ duration: 0.15 }}
+        />
+        <motion.span
+          className="block h-0.5 w-5 rounded-full bg-[#FFB400]"
           animate={isOpen ? { rotate: -45, y: -4 } : { rotate: 0, y: 0 }}
-          transition={{ duration: 0.25 }}
+          transition={{ duration: 0.2 }}
         />
       </span>
     </button>

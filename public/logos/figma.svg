@@ -1,12 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="figma.svg">
-  <defs>
-    <linearGradient id="g-figmasvg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#F24E1E" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#F24E1E" stop-opacity="0.82"/>
-    </linearGradient>
-  </defs>
-  <rect width="48" height="48" rx="12" fill="url(#g-figmasvg)"/>
-  <rect x="1" y="1" width="46" height="46" rx="11" fill="none" stroke="rgba(255,255,255,0.12)"/>
-  
-  <text x="24" y="29" text-anchor="middle" fill="#FFFFFF" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="14" font-weight="700">Fi</text>
-</svg>
+<svg height="1em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1em" xmlns="http://www.w3.org/2000/svg"><title>Figma</title><path d="M4 20a4 4 0 014-4h4v4a4 4 0 01-8 0z" fill="#24CB71"></path><path d="M12 0v8h4a4 4 0 000-8h-4z" fill="#FF7237"></path><path d="M15.967 16a4 4 0 100-8 4 4 0 000 8z" fill="#00B6FF"></path><path d="M4 4a4 4 0 004 4h4V0H8a4 4 0 00-4 4z" fill="#FF3737"></path><path d="M4 12a4 4 0 004 4h4V8H8a4 4 0 00-4 4z" fill="#874FFF"></path></svg>

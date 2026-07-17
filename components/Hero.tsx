@@ -7,7 +7,7 @@ export function Hero() {
   const toolCount = tools.length;
 
   return (
-    <section className="relative px-6 pb-16 pt-20 text-center lg:px-8 lg:pt-28 lg:pb-20">
+    <section className="relative px-6 pb-10 pt-20 text-center lg:px-8 lg:pt-28 lg:pb-12">
       <div className="mx-auto max-w-3xl animate-fade-up">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[rgba(255,184,0,0.2)] bg-[rgba(255,184,0,0.06)] px-4 py-1.5 text-sm text-[#FFB800]">
           <Sparkles className="h-3.5 w-3.5" />

@@ -3,8 +3,9 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ToolDetail } from "@/components/tools/ToolDetail";
 import {
+  getAdjacentTools,
   getAllToolSlugs,
-  getRelatedTools,
+  getPeopleAlsoUse,
   getToolBySlug,
 } from "@/lib/tools";
 
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: ToolPageProps) {
 
   return {
     title: `${tool.name} | NeuralVarsity AI Tools Lab`,
-    description: tool.description,
+    description: tool.overview ?? tool.description,
   };
 }
 
@@ -38,14 +39,20 @@ export default async function ToolPage({ params }: ToolPageProps) {
     notFound();
   }
 
-  const relatedTools = getRelatedTools(tool);
+  const relatedTools = getPeopleAlsoUse(tool);
+  const { prev, next } = getAdjacentTools(slug);
 
   return (
     <>
       <Navbar />
       <main className="px-6 py-10 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <ToolDetail tool={tool} relatedTools={relatedTools} />
+          <ToolDetail
+            tool={tool}
+            relatedTools={relatedTools}
+            prevTool={prev}
+            nextTool={next}
+          />
         </div>
       </main>
       <Footer />

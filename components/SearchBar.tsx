@@ -15,7 +15,7 @@ export function SearchBar({ value, onChange }: SearchBarProps) {
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        placeholder="Search AI Tools..."
+        placeholder='Try “video”, “coding”, “free”, or “OpenAI”...'
         suppressHydrationWarning
         className="w-full rounded-2xl border border-[rgba(255,184,0,0.15)] bg-[rgba(15,23,42,0.7)] py-3.5 pl-11 pr-4 text-sm text-white placeholder:text-slate-500 backdrop-blur-xl transition-all focus:border-[#FFB800]/40 focus:outline-none focus:ring-2 focus:ring-[#FFB800]/10"
       />
