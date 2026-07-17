@@ -13,10 +13,8 @@ const CATEGORIES = FILTER_CATEGORIES.filter((c): c is ToolCategory => c !== "All
 
 const RESOURCES = [
   { label: "Suggest Tool", href: "/labs/suggest" },
-  { label: "GitHub", href: "https://github.com/adil-ahmed1222/Neuralvarsity_labs", external: true },
   { label: "Privacy", href: "/labs#tools" },
   { label: "About", href: "https://neuralvarsity.ai", external: true },
-  { label: "Newsletter", href: "/labs/suggest" },
 ];
 
 export function Footer() {
